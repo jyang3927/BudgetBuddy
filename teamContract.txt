@@ -1,0 +1,43 @@
+1. What are each team member's responsibilities?
+    - Good open communication with team members 
+    - Focus on collaboration -> take time to help each other and make sure everyone is on the same page 
+    - Writing good comments/code 
+2. How will you distribute tasks among team members?
+    - Divide in Trello and keep Trello up to date on what is in-progress/completed
+3.What are your team's daily goals, and how will you track progress?
+    - Focus on functionality > appearance until foundation is set
+    - Remain updated in Slack & Trello 
+    - Discuss during check-in whether or not we are on the right to finishing project by Wednesday 
+4.How will you communicate (e.g., daily stand-ups, Slack, Trello)?
+    - Slack chat 
+    - Trello
+5.What is your plan for resolving disagreements or blockers?
+    - For Disagreements: 
+        - We will make sure to listen to both sides of the disagreement. 
+        - Majority rule will be how we proceed with making a decision regarding the disagreement. 
+        - Decision on disagreement will be made based on whether or not it aligns with overall project scope/scale/vision.
+    - For Blockers: 
+        - Collaboration to get rid of blocker as soon as possible in order to remain on track. 
+        - If you are stuck on something for more than 1 hour (after searching Google and doing your due diligence), ask team members for help. 
+6.How will you ensure that all team members' voices are heard and considered?
+    - Give opportunity for every member to share their thoughts and opinions before making a decision. 
+7.What are your expectations around code quality and documentation?
+    - Name variables that make sense (give an idea of what they represent)
+    - Go through all the checks to make sure you won't break code (code in your branch, change code in main without checks, etc); 
+    - Use the same syntax:
+        - semicolon (JS)
+        - template literals (JS) `${}` for integrating response based elements 
+        - double quotes (JS)
+    - Individually take time to make sure code in readable but concise. Avoid redundancy as much as possible 
+    - Add comments 
+        - describe what function does 
+        - comment on what variable will hold if not clear by name 
+8.How will you handle situations where a team member is not fulfilling their part of the work?
+    - Reach out and have a conversation. We will work as a team to try to accomodate each other (life happens) and work together
+    - Bring in instructors after reaching out three times regarding same issue 
+9.What are the agreed-upon working hours or check-in times for the team?
+    - Working Hours 
+        - 9AM-5PM class hours 
+    - Check-in (15 min max) Mon-Fri 
+        - 10 AM (for now)
+    - Will remain open to meeting when necessary outside of working hours/check-in (communicate through Slack)
