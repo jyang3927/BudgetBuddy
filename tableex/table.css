@@ -1,0 +1,13 @@
+table {
+    width: 90%;
+  }
+  
+  th {
+    height: 70px;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+  }
