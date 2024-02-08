@@ -7,10 +7,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   btn.addEventListener("click", function (e) {
     e.preventDefault();
+    //on button click "display: none"
     container.style.display = "none";
     budgetMain.style.display = "flex";
   });
-  // Name and budget goes into local storage, and the "display none"
+  // Name and budget goes into local storage
   localStorage.setItem("name", nameValue);
   localStorage.setItem("budget", budgetValue);
 });
