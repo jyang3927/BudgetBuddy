@@ -74,6 +74,208 @@ h2 {
   font-size: 14px;
   margin-top: 40px;
 }
+
+/* MAIN BUDGET MOBILE STYLES */
+body {
+  margin: 0; 
+  height: 100vh;
+  background-color: #6a994e;
+  font-family: 'Rubik', sans-serif;
+}
+
+.budget-main{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  background-color: #6a994e;
+  margin: 10px 50px;
+}
+
+/* remaining balance section */
+
+#remaining-balance-container {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #386641;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f2e8cf;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+#remaining-balance-title {
+  font-size: 50px;
+  margin: 30px 50px 10px 50px;
+  color: #0A680A;
+}
+#remaining-balance-num {
+  border: 3px solid #386641;
+  height: 75px;
+  background-color: #FBF7EF;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 30px;
+  margin: 20px 20px;
+  width: 80%;
+  color: #115711;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.dollar-image-main {
+  height: 200px;
+  width: auto;
+}
+/* add expense button */
+#submit-expense {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+#submit-expense-btn {
+  width: 70%;
+  border-radius: 7px; 
+  border: 3px solid #115711;
+  height: 50px;
+  font-size: 25px;
+  background-color: #386641;
+  color: #fbf7ef;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 5px 95px;
+}
+
+/* category breakdown */
+#category-container {
+  border: 3px solid #115711;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2e8cf;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+#category-container > h3 {
+  color: #115711;
+  font-weight: 500;
+  font-size: 25px;
+  margin: 5px 25px;
+}
+#category-breakdown-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.category-box {
+  margin: 5px;
+  border: 2px solid #115711;
+  font-size: 17px;
+  width: auto;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #fbf7ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#food-breakdown {
+  background-color: #75B9BE;
+  padding: 10px;
+}
+#bills-breakdown {
+  background-color: #9BC53D;
+  padding: 10px;
+}
+#ent-breakdown {
+  background-color: #DA627D;
+  padding: 10px;
+}
+#clothing-breakdown {
+  background-color: #F4A261;
+  padding: 10px;
+}
+
+/* Mobile Expense Table */
+.expense-table {
+  width: 100%;
+  margin-top: 15px;
+  height: 475px;
+  background-color: #f2e8cf;
+  border: 4px solid #386641;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+#mainTable {
+  width: 100%;
+  border: 3px solid #386641;
+  border-spacing: 0;
+}
+thead {
+  font-size: 25px;
+  width: 100%;
+  background-color: #386641;
+}
+#table-head {
+  background-color: #386641;
+  color: #fbf7ef
+}
+th {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  padding: 7px;
+  border: 1px solid #f2e8cf;
+}
+
+/* Total Spent */
+#startCost {
+  border: 3px solid #386641;
+  margin-top: 10px;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30px;
+  background-color: #f2e8cf;
+  color: #386641;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+#startCost > p {
+  padding-left: 20px;
+  display: flex;
+}
+#spanStartCost {
+  border: 2px solid #386641;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: 30px;
+  background-color: #fbf7ef;
+  border-radius: 10px;;
+}
+
 @media screen and (min-width: 768px) {
   .nameAndBudget input[type="text"],
   .nameAndBudget input[type="number"] {
