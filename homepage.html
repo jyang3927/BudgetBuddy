@@ -16,7 +16,7 @@
         <img src="styles/logo.svg" />
       </div>
       <h2>BUDGET BUDDY</h2>
-      <form>
+      <form id="">
         <div class="nameAndBudget">
           <label>Name</label>
           <input type="text" id="name" />
@@ -29,7 +29,8 @@
           type="submit"
           class="btn"
           value="Enter Max Allocated Amount Here"
-        > GET STARTED </button>
+        > GET STARTED
+        </button>
       </form>
       <div id="bottomText">
         Track Your Spending And Take Control of Your Finances
@@ -42,7 +43,7 @@
         <!-- <img class="dollar-image-main" src="styles/logo.svg"/> -->
         <h1 id="remaining-balance-title">Remaining Balance </h1>
         <!-- Where remaining balance will show up -->
-        <p id="remaining-balance-num">$</p>
+        <p>$ <span id="remaining-balance-num"></span></p>
         <div id="submit-expense">
           <!-- button to submit a new expense -->
           <button id="submit-expense-btn"> Add Expense</button>
@@ -88,7 +89,9 @@
         <span id="spanStartCost">  </span>
       </div>
     </div>
-    <!-- <input type="text" id="itemInput" placeholder="Item">
+    <!-- EXPENSE FORM -->
+    <div id="expense-form">
+    <input type="text" id="itemInput" placeholder="Item">
     <select id="categoryInput" placeholder="Category">
         <option value="Bills">Bills</option>
         <option value="Clothing">Clothing</option>

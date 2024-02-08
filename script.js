@@ -61,7 +61,7 @@ for (var i = 1; i < table.rows.length; i++) {
   // Add the cost to the updatedBudget
   updatedBudget -= cost;
 }
-  remainingBalance.innerText = updatedBudget
+  remainingBalance.innerText = updatedBudget;
 
   var spanStartCost = document.getElementById("spanStartCost");
   var startCost = 0
