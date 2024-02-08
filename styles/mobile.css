@@ -279,14 +279,20 @@ th {
 @media screen and (min-width: 768px) {
   .nameAndBudget input[type="text"],
   .nameAndBudget input[type="number"] {
-    width: 65%;
+    width: 468px;
   }
   .nameAndBudget label {
-    width: 65%;
+    width: 468px;
     box-sizing: border-box;
   }
   .nameAndBudget {
     margin-bottom: 20px;
+    width: 468px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
   }
   form {
     display: flex;
