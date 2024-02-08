@@ -122,7 +122,7 @@ body {
   margin: 30px 50px 10px 50px;
   color: #0A680A;
 }
-#remaining-balance-num {
+#remaining-balance-area {
   border: 3px solid #386641;
   height: 75px;
   background-color: #FBF7EF;
@@ -285,6 +285,68 @@ th {
   background-color: #fbf7ef;
   border-radius: 10px;;
 }
+
+/* Expense FORM  */
+#expense-container {
+  display: none;
+  flex-direction: column;
+  font-family: "Rubik", sans-serif;
+  height: 70%;
+  border: 3px solid #f2e8cf;
+  width: 80%;
+  background-color: #f2e8cf;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+#expense-form {
+  display: flex; 
+  flex-direction: column;
+}
+.input-layouts {
+  display: flex; 
+  flex-direction: column;
+}
+.input-layouts > label {
+  color: #6a994e; 
+  font-size: 30px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#expense-add-btn {
+  font-family: "Rubik", sans-serif;
+  height: 50px;
+  width: 50%;
+  border: 2px solid #386641; 
+  border-radius: 10px;
+  background-color: #386641;
+  color: #fbf7ef; 
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #386641; 
+  color: gray;
+  padding:0px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#expense-logo {
+  height: 150px;
+}
+
+
+
+/* MEDIA QUERY */
 
 @media screen and (min-width: 768px) {
   .nameAndBudget input[type="text"],

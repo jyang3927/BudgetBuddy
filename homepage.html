@@ -16,7 +16,7 @@
         <img src="styles/logo.svg" />
       </div>
       <h2>BUDGET BUDDY</h2>
-      <form id="">
+      <form>
         <div class="nameAndBudget">
           <label>Name</label>
           <input type="text" id="name" />
@@ -43,7 +43,7 @@
         <!-- <img class="dollar-image-main" src="styles/logo.svg"/> -->
         <h1 id="remaining-balance-title">Remaining Balance </h1>
         <!-- Where remaining balance will show up -->
-        <p>$ <span id="remaining-balance-num"></span></p>
+        <p id="remaining-balance-area">$ <span id="remaining-balance-num"></span></p>
         <div id="submit-expense">
           <!-- button to submit a new expense -->
           <button id="submit-expense-btn"> Add Expense</button>
@@ -90,16 +90,30 @@
       </div>
     </div>
     <!-- EXPENSE FORM -->
-    <div id="expense-form">
-    <input type="text" id="itemInput" placeholder="Item">
-    <select id="categoryInput" placeholder="Category">
-        <option value="Bills">Bills</option>
-        <option value="Clothing">Clothing</option>
-        <option value="Entertainment">Entertainment</option>
-        <option value="Food">Food</option>
-    </select>
-    <input type="number" id="costInput" placeholder="Cost">
-    <button onclick="addRow()">Add Purchase</button> -->
+    <div id="expense-container">
+      <form id="expense-form">
+        <img id="expense-logo" src="styles/logo.svg"/>
+        <div class="input-layouts">
+          <label for="itemInput">Item </label>
+          <input type="text" id="itemInput" class="input-box" placeholder="Item">
+        </div>
+        <div class="input-layouts">
+          <label for="categoryInput">Select Category </label>
+          <select id="categoryInput" class="input-box" placeholder="Category">
+              <option value="Bills">Bills</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Food">Food</option>
+          </select>
+        </div>
+        <div class="input-layouts">
+          <label for="costInput">Cost </label>
+          <input type="number" id="costInput" class="input-box" placeholder="Cost">
+        </div>
+        <button id="expense-add-btn" onclick="addRow()">Add Purchase</button>
+      </form>
+    </div>
+    <!-- JS Script FILE  -->
     <script src="script.js"></script>
   </body>
 </html>
