@@ -5,6 +5,9 @@ const entranceForm = document.querySelector("entranceForm");
 const nameInput = document.getElementById("name");
 const budgetInput = document.getElementById("budget");
 const remainingBalance = document.getElementById("remaining-balance-num");
+const addExpense = document.getElementById("submit-expense-btn"); 
+const expenseForm = document.getElementById("expense-container");
+const addPurchaseBtn = document.getElementById("expense-add-btn"); 
 
 btn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -20,20 +23,20 @@ btn.addEventListener("click", function (e) {
 
 function addRow() {
   // Get input values
-  var item = document.getElementById("itemInput").value;
-  var category = document.getElementById("categoryInput").value;
-  var cost = document.getElementById("costInput").value;
+  let item = document.getElementById("itemInput").value;
+  let category = document.getElementById("categoryInput").value;
+  let cost = document.getElementById("costInput").value;
 
   // Get table body
-  var table = document.getElementById("mainTable").getElementsByTagName("tbody")[0];
+  let table = document.getElementById("mainTable").getElementsByTagName("tbody")[0];
 
   // Create a new row
-  var newRow = table.insertRow();
+  let newRow = table.insertRow();
 
   // Insert cells into the row
-  var itemCol = newRow.insertCell(0);
-  var categoryCol = newRow.insertCell(1);
-  var costCol = newRow.insertCell(2);
+  let itemCol = newRow.insertCell(0);
+  let categoryCol = newRow.insertCell(1);
+  let costCol = newRow.insertCell(2);
 
   // Add values to the cells
   itemCol.innerHTML = item;
@@ -53,10 +56,15 @@ function addRow() {
   // The 500 needs to be replaced by what is submitted on the first page
   let updatedBudget = Number(remainingBalance.innerText);
 
+  //
+  container.style.display = "none";
+  expenseForm.style.display = "none";
+  budgetMain.style.display = "flex";
+
 // Iterate over rows starting from the second row (skip header row)
 for (var i = 1; i < table.rows.length; i++) {
   // Get the cell value of the third column (index 2) and parse it as a float
-  var cost = parseFloat(table.rows[i].cells[2].textContent.replace("$", ""));
+   cost = parseFloat(table.rows[i].cells[2].textContent.replace("$", ""));
 
   // Add the cost to the updatedBudget
   updatedBudget -= cost;
@@ -69,7 +77,7 @@ for (var i = 1; i < table.rows.length; i++) {
 // Total cost updates
 for (var i = 1; i < table.rows.length; i++) {
   // Get the cell value of the third column (index 2) and parse it as a float
-  var cost = parseFloat(table.rows[i].cells[2].textContent.replace("$", ""));
+   cost = parseFloat(table.rows[i].cells[2].textContent.replace("$", ""));
 
   // Add up total cost
   startCost += cost;
@@ -77,3 +85,21 @@ for (var i = 1; i < table.rows.length; i++) {
 spanStartCost.innerText = `$${startCost}`
 
 }
+
+
+//Add expense click will bring form to display
+addExpense.addEventListener("click", function (e) {
+  e.preventDefault();
+  //on button click "display: none"
+  container.style.display = "none";
+  expenseForm.style.display = "flex";
+  budgetMain.style.display = "none";
+})
+
+//Add Purchase Button click will bring back to main page with updated table
+addPurchaseBtn.addEventListener("click", (e) => {
+  e.preventDefault(); 
+  container.style.display = "none";
+  expenseForm.style.display = "none";
+  budgetMain.style.display = "flex";
+})
