@@ -1,0 +1,96 @@
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #d9d9d9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.logo img {
+  width: 80px;
+  height: auto;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #347334;
+  font-size: 32px;
+}
+.nameAndBudget {
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.nameAndBudget label {
+  background-color: #347334;
+  color: white;
+  display: block;
+  padding: 10px;
+  margin-bottom: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.nameAndBudget input[type="text"],
+.nameAndBudget input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: #347334;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  display: block;
+  margin: 20px;
+}
+
+.btn a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+#bottomText {
+  font-size: 14px;
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .nameAndBudget input[type="text"],
+  .nameAndBudget input[type="number"] {
+    width: 65%;
+  }
+  .nameAndBudget label {
+    width: 65%;
+    box-sizing: border-box;
+  }
+  .nameAndBudget {
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
