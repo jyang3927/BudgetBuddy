@@ -48,28 +48,12 @@ function addRow() {
   document.getElementById("categoryInput").value = "";
   document.getElementById("costInput").value = "";
 
-  // Everything above this comment works, just need to convert to form
-
   // Update remaining budget each time new item is entered
   let remainingBalance = document.getElementById("remaining-balance-num");
-  
-  // The 500 needs to be replaced by what is submitted on the first page
-  let updatedBudget = Number(remainingBalance.innerText);
 
-  //
   container.style.display = "none";
   expenseForm.style.display = "none";
   budgetMain.style.display = "flex";
-
-// Iterate over rows starting from the second row (skip header row)
-for (var i = 1; i < table.rows.length; i++) {
-  // Get the cell value of the third column (index 2) and parse it as a float
-   cost = parseFloat(table.rows[i].cells[2].textContent.replace("$", ""));
-
-  // Add the cost to the updatedBudget
-  updatedBudget -= cost;
-}
-  remainingBalance.innerText = updatedBudget;
 
   var spanStartCost = document.getElementById("spanStartCost");
   var startCost = 0
@@ -83,6 +67,7 @@ for (var i = 1; i < table.rows.length; i++) {
   startCost += cost;
 }
 spanStartCost.innerText = `$${startCost}`
+remainingBalance.innerText =budgetInput.value - startCost
 
 }
 
