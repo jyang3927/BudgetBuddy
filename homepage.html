@@ -4,19 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/mobile.css" />
     <title>Budget Buddy</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container coding-none">
       <div class="logo">
         <img src="styles/logo.svg" />
       </div>
@@ -36,6 +31,59 @@
       </form>
       <div id="bottomText">
         Track Your Spending And Take Control of Your Finances
+      </div>
+    </div>
+  <!-- mobile main budget page -->
+    <div class="budget-main">
+      <!-- remaining balance header -->
+      <div id="remaining-balance-container">
+        <!-- <img class="dollar-image-main" src="styles/logo.svg"/> -->
+        <h1 id="remaining-balance-title">Remaining Balance </h1>
+        <!-- Where remaining balance will show up -->
+        <p id="remaining-balance-num">$</p>
+        <div id="submit-expense">
+          <!-- button to submit a new expense -->
+          <button id="submit-expense-btn"> Add Expense</button>
+        </div>
+      </div>
+      <!-- category breakdown section -->
+      <div id="category-container">
+        <h3>Category Breakdown</h3>
+        <div id="category-breakdown-display">
+          <div class="category-box">
+            <div id="food-breakdown">Food: $<span id="food-total">0.00</span></div>
+          </div>
+          <div class="category-box">
+            <div id="bills-breakdown">Bills: $<span id="bills-total">0.00</span></div>
+          </div>
+          <div class="category-box">
+            <div id="ent-breakdown">Entertainment: $<span id="ent-total">0.00</span></div>
+          </div>
+          <div class="category-box">
+            <div id="clothing-breakdown">Clothing: $<span id="clothing-total">0.00</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Expense Table -->
+      <div class="expense-table">
+        <table id="mainTable">
+          <thead>
+              <tr id="table-head">
+                  <th>Item</th>
+                  <th>Category</th>
+                  <th>Cost</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="startCost">
+        <p>Total Spent: </p>
+        <span id="spanStartCost">  </span>
       </div>
     </div>
     <script src="script.js"></script>
