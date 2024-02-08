@@ -1,19 +1,21 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  const btn = document.querySelector(".btn");
-  const container = document.querySelector(".container");
-  const budgetMain = document.querySelector(".budget-main");
-  const nameValue = document.getElementById("name").value;
-  const budgetValue = document.getElementById("budget").value;
+const btn = document.querySelector(".btn");
+const container = document.querySelector(".container");
+const budgetMain = document.querySelector(".budget-main");
+const entranceForm = document.querySelector("entranceForm");
+const nameInput = document.getElementById("name");
+const budgetInput = document.getElementById("budget");
+const remainingBalance = document.getElementById("remaining-balance-num");
 
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    //on button click "display: none"
-    container.style.display = "none";
-    budgetMain.style.display = "flex";
-  });
+btn.addEventListener("click", function (e) {
+  e.preventDefault();
+  //on button click "display: none"
+  container.style.display = "none";
+  budgetMain.style.display = "flex";
   // Name and budget goes into local storage
-  localStorage.setItem("name", nameValue);
-  localStorage.setItem("budget", budgetValue);
+  localStorage.setItem("name", nameInput.value);
+  localStorage.setItem("budget", budgetInput.value);
+  remainingBalance.innerText = budgetInput.value;
+  console.dir(remainingBalance)
 });
 
 function addRow() {
@@ -46,10 +48,10 @@ function addRow() {
   // Everything above this comment works, just need to convert to form
 
   // Update remaining budget each time new item is entered
-  var remainingBalance = document.getElementById("remaining-balance-num");
+  let remainingBalance = document.getElementById("remaining-balance-num");
   
   // The 500 needs to be replaced by what is submitted on the first page
-  var updatedBudget = 500;
+  let updatedBudget = Number(remainingBalance.innerText);
 
 // Iterate over rows starting from the second row (skip header row)
 for (var i = 1; i < table.rows.length; i++) {
@@ -59,7 +61,7 @@ for (var i = 1; i < table.rows.length; i++) {
   // Add the cost to the updatedBudget
   updatedBudget -= cost;
 }
-  remainingBalance.innerText = `$${updatedBudget}`
+  remainingBalance.innerText = updatedBudget;
 
   var spanStartCost = document.getElementById("spanStartCost");
   var startCost = 0

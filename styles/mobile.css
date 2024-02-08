@@ -13,6 +13,7 @@ body {
 .container {
   width: 80%;
   margin: auto;
+  font-family: "Rubik", sans-serif;
 }
 form {
   display: flex;
@@ -22,14 +23,14 @@ form {
   width: 100%;
 }
 .logo img {
-  width: 80px;
+  width: 100px;
   height: auto;
   margin-top: 20px;
 }
 
 h2 {
-  color: #347334;
-  font-size: 32px;
+  color: #fbf7ef;
+  font-size: 40px;
 }
 .nameAndBudget {
   margin-bottom: 20px;
@@ -44,6 +45,9 @@ h2 {
   margin-bottom: 0;
   border-radius: 4px;
   box-sizing: border-box;
+  border: 2px solid #386641;
+  font-weight: 500;
+  font-size: 20px;
 }
 .nameAndBudget input[type="text"],
 .nameAndBudget input[type="number"] {
@@ -52,16 +56,20 @@ h2 {
   margin-bottom: 10px;
   border-radius: 4px;
   box-sizing: border-box;
+  border: 2px solid #386641;
 }
 
 .btn {
   background-color: #347334;
-  color: white;
+  color: #fbf7ef;
   padding: 15px 20px;
   border-radius: 4px;
   font-size: 16px;
   display: block;
   margin: 20px;
+  border: 2px solid #386641;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
 }
 
 .btn a {
@@ -71,8 +79,10 @@ h2 {
 }
 
 #bottomText {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 40px;
+  color: #fbf7ef;
+  font-weight: 600;
 }
 
 /* MAIN BUDGET MOBILE STYLES */
@@ -84,7 +94,7 @@ body {
 }
 
 .budget-main{
-  display: flex;
+  display: none;
   flex-direction: column;
   height: 100vh;
   width: 100%;
