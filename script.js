@@ -2,12 +2,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const btn = document.querySelector(".btn");
   const container = document.querySelector(".container");
   const budgetMain = document.querySelector(".budget-main");
+  const nameValue = document.getElementById("name").value;
+  const budgetValue = document.getElementById("budget").value;
 
   btn.addEventListener("click", function (e) {
     e.preventDefault();
+    //on button click "display: none"
     container.style.display = "none";
     budgetMain.style.display = "flex";
   });
+  // Name and budget goes into local storage
+  localStorage.setItem("name", nameValue);
+  localStorage.setItem("budget", budgetValue);
 });
 
 function addRow() {
@@ -37,8 +43,12 @@ function addRow() {
   document.getElementById("categoryInput").value = "";
   document.getElementById("costInput").value = "";
 
+  // Everything above this comment works, just need to convert to form
+
   // Update remaining budget each time new item is entered
-  var spanBudget = document.getElementById("spanBudget");
+  var remainingBalance = document.getElementById("remaining-balance-num");
+  
+  // The 500 needs to be replaced by what is submitted on the first page
   var updatedBudget = 500;
 
 // Iterate over rows starting from the second row (skip header row)
@@ -49,7 +59,7 @@ for (var i = 1; i < table.rows.length; i++) {
   // Add the cost to the updatedBudget
   updatedBudget -= cost;
 }
-  spanBudget.innerText = `$${updatedBudget}`
+  remainingBalance.innerText = `$${updatedBudget}`
 
   var spanStartCost = document.getElementById("spanStartCost");
   var startCost = 0
