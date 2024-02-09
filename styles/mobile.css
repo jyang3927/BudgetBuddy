@@ -134,10 +134,12 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding-left: 20px;
-  font-size: 30px;
+  font-size: 60px;
+  font-weight: 500;
+  justify-content: center;
   margin: 20px 20px;
   width: 80%;
-  color: #115711;
+  color: #386641;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 .dollar-image-main {
@@ -255,6 +257,9 @@ th {
   border: 1px solid #f2e8cf;
 }
 
+.Bills {
+  background-color: #F4A261;
+}
 /* Total Spent */
 #startCost {
   border: 3px solid #386641;
@@ -275,6 +280,7 @@ th {
 #startCost > p {
   padding-left: 20px;
   display: flex;
+  font-weight: 500;
 }
 #spanStartCost {
   border: 2px solid #386641;
@@ -286,7 +292,10 @@ th {
   margin-left: auto;
   margin-right: 30px;
   background-color: #fbf7ef;
-  border-radius: 10px;;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 32px;
+  padding-right: 30px;
 }
 
 /* Expense FORM  */
