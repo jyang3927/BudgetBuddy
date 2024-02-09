@@ -119,6 +119,10 @@ btn.addEventListener("click", function (e) {
 //Add expense click will bring form to display
 addExpense.addEventListener("click", function (e) {
   e.preventDefault();
+  if (nameInput === '' || budgetInput === '') {
+    alert('Please fill in all fields');
+    return;
+  }
   //on button click "display: none"
   container.style.display = "none";
   expenseForm.style.display = "flex";
