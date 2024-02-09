@@ -7,19 +7,23 @@ const budgetInput = document.getElementById("budget");
 const remainingBalance = document.getElementById("remaining-balance-num");
 const addExpense = document.getElementById("submit-expense-btn"); 
 const expenseForm = document.getElementById("expense-container");
-const addPurchaseBtn = document.getElementById("expense-add-btn"); 
+const addPurchaseBtn = document.getElementById("expense-add-btn");
+const spanStartCost = document.getElementById("spanStartCost")
 // form inputs
 let itemInput = document.getElementById("itemInput");
 let categoryInput = document.getElementById("categoryInput");
 let costInput = document.getElementById("costInput");
 //table
 const mainTable = document.getElementById("mainTable");
-let expenseArray = []; 
+let expenseArray = []
 //category breakdown 
 let foodTotal = document.getElementById("food-total"); 
 let billsTotal = document.getElementById("bills-total"); 
 let entTotal = document.getElementById("ent-total"); 
 let clothingTotal = document.getElementById("clothing-total");
+
+// tbody
+let tableBody = document.querySelector("tbody")
 
 //Class 
 class Expense {
@@ -33,8 +37,29 @@ class Expense {
 // FUNCTIONS 
 function createExpense(item, category, amount) {
   let newExpense = new Expense(item, category, amount); 
-  expenseArray.push(newExpense);
+  expenseArray.push(newExpense)
   return newExpense; 
+}
+
+function addToTable() {
+  // Initially add 1 row and 3 columns
+  
+  // Append td's to row
+  
+
+  // Insert cells into the row
+  // Append entry to table
+  expenseArray.forEach((expense)=> {
+    let tableRow = document.createElement('tr')
+    let itemColumn = document.createElement('td')
+    let categoryColumn = document.createElement('td')
+    let amountColumn = document.createElement('td')
+    itemColumn.innerText = expense.item
+    categoryColumn.innerText = expense.category
+    amountColumn.innerText = expense.amount
+    tableRow.append(itemColumn, categoryColumn, amountColumn)
+    tableBody.append(tableRow)
+  }) 
 }
 
 function categoryBreakdown(expenseArray){
@@ -58,6 +83,22 @@ function categoryBreakdown(expenseArray){
     newCatTotal = Number(expenseArray[addedObj].amount) + Number(clothingTotal.innerText);
     clothingTotal.innerText = newCatTotal.toString();
   }
+}
+
+// Updating Remaning expense and Total Cost, not working rn
+function updateTotals() {
+  let startCost = 0;
+
+  // Total cost updates
+  for (let i = 0; i < expenseArray.length; i++) {
+    // Get cost from array
+    cost = Number(expenseArray[i].amount)
+
+    // Add up total cost
+    startCost += cost;
+  }
+  spanStartCost.innerText = `$${startCost}`;
+  remainingBalance.innerText = budgetInput.value - startCost;
 }
 
 // function addRow() {
@@ -148,11 +189,18 @@ addPurchaseBtn.addEventListener("click", (e) => {
 
   //create new expense object 
   createExpense(item, category, cost);
+  //call function to create new item row
+  tableBody.innerHTML = "" 
+  addToTable();
+  updateTotals()
 
-  //create new row 
-
-  //call function to create new item row 
-  // addRow();
+   //update category breakdown 
+   categoryBreakdown(expenseArray);
+  
+  // clear inputs of form
+  itemInput.value = "";
+  categoryInput.value = "";
+  costInput.value = ""
 
   //update category breakdown 
   categoryBreakdown(expenseArray);
