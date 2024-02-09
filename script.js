@@ -140,7 +140,7 @@ addPurchaseBtn.addEventListener("click", (e) => {
   categoryInput.value = "";
   costInput.value = ""
 
-  //change display settings
+  //change display settings for cells 
   container.style.display = "none";
   expenseForm.style.display = "none";
   budgetMain.style.display = "flex";
