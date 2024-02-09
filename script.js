@@ -8,14 +8,14 @@ const remainingBalance = document.getElementById("remaining-balance-num");
 const addExpense = document.getElementById("submit-expense-btn"); 
 const expenseForm = document.getElementById("expense-container");
 const addPurchaseBtn = document.getElementById("expense-add-btn");
-const spanStartCost = document.getElementById("spanStartCost")
+const spanStartCost = document.getElementById("spanStartCost");
 // form inputs
 let itemInput = document.getElementById("itemInput");
 let categoryInput = document.getElementById("categoryInput");
 let costInput = document.getElementById("costInput");
 //table
 const mainTable = document.getElementById("mainTable");
-let expenseArray = []
+let expenseArray = [];
 //category breakdown 
 let foodTotal = document.getElementById("food-total"); 
 let billsTotal = document.getElementById("bills-total"); 
@@ -23,7 +23,7 @@ let entTotal = document.getElementById("ent-total");
 let clothingTotal = document.getElementById("clothing-total");
 
 // tbody
-let tableBody = document.querySelector("tbody")
+let tableBody = document.querySelector("tbody");
 
 //Class 
 class Expense {
@@ -43,10 +43,7 @@ function createExpense(item, category, amount) {
 
 function addToTable() {
   // Initially add 1 row and 3 columns
-  
   // Append td's to row
-  
-
   // Insert cells into the row
   // Append entry to table
   expenseArray.forEach((expense)=> {
@@ -137,10 +134,7 @@ addPurchaseBtn.addEventListener("click", (e) => {
   tableBody.innerHTML = "" 
   addToTable();
   updateTotals()
-
-  //update category breakdown 
-  categoryBreakdown(expenseArray);
-
+  
   // clear inputs of form
   itemInput.value = "";
   categoryInput.value = "";
