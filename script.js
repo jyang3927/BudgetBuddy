@@ -8,12 +8,27 @@ const remainingBalance = document.getElementById("remaining-balance-num");
 const addExpense = document.getElementById("submit-expense-btn"); 
 const expenseForm = document.getElementById("expense-container");
 const addPurchaseBtn = document.getElementById("expense-add-btn"); 
+// form inputs
 let itemInput = document.getElementById("itemInput");
 let categoryInput = document.getElementById("categoryInput");
 let costInput = document.getElementById("costInput");
+
 const mainTable = document.getElementById("mainTable");
 
+//Class 
+class Expense {
+  constructor(item, category, amount) {
+    this.item = item; 
+    this.category = category; 
+    this.amount = amount; 
+  }
+}
+
 // FUNCTIONS 
+function createExpense(item, category, amount) {
+  let newExpense = new Expense(item, category, amount); 
+  return newExpense; 
+}
 
 function addRow() {
   // Get input values
@@ -95,10 +110,16 @@ addExpense.addEventListener("click", function (e) {
 //Add Purchase Button click will bring back to main page with updated table
 addPurchaseBtn.addEventListener("click", (e) => {
   e.preventDefault(); 
-  //call function to create new item row 
-  addRow();
 
-  //set class equal to category of purchase 
+  //get values of form inputs 
+  let item = itemInput.value;
+  let category = categoryInput.value;
+  let cost = costInput.value;
+
+  //create new expense object 
+  createExpense(item, category, cost);
+  //call function to create new item row 
+  // addRow();
 
   //change display settings
   container.style.display = "none";
