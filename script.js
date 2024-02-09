@@ -101,9 +101,14 @@ function updateTotals() {
 
 btn.addEventListener("click", function (e) {
   e.preventDefault();
+  if (nameInput.value === '' || budgetInput.value === '') {
+    alert('Please fill in all fields');
+    return;
+  }
   //on button click "display: none"
   container.style.display = "none";
   budgetMain.style.display = "flex";
+  
   // Name and budget goes into local storage
   localStorage.setItem("name", nameInput.value);
   localStorage.setItem("budget", budgetInput.value);
@@ -114,6 +119,10 @@ btn.addEventListener("click", function (e) {
 //Add expense click will bring form to display
 addExpense.addEventListener("click", function (e) {
   e.preventDefault();
+  if (nameInput === '' || budgetInput === '') {
+    alert('Please fill in all fields');
+    return;
+  }
   //on button click "display: none"
   container.style.display = "none";
   expenseForm.style.display = "flex";
@@ -128,6 +137,11 @@ addPurchaseBtn.addEventListener("click", (e) => {
   let item = itemInput.value;
   let category = categoryInput.value;
   let cost = costInput.value;
+
+  if (item === '' || category === '' || cost === '') {
+    alert('Please fill in all fields');
+    return;
+  }
 
   //create new expense object 
   createExpense(item, category, cost);
