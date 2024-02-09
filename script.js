@@ -8,14 +8,14 @@ const remainingBalance = document.getElementById("remaining-balance-num");
 const addExpense = document.getElementById("submit-expense-btn"); 
 const expenseForm = document.getElementById("expense-container");
 const addPurchaseBtn = document.getElementById("expense-add-btn");
-const spanStartCost = document.getElementById("spanStartCost")
+const spanStartCost = document.getElementById("spanStartCost");
 // form inputs
 let itemInput = document.getElementById("itemInput");
 let categoryInput = document.getElementById("categoryInput");
 let costInput = document.getElementById("costInput");
 //table
 const mainTable = document.getElementById("mainTable");
-let expenseArray = []
+let expenseArray = [];
 //category breakdown 
 let foodTotal = document.getElementById("food-total"); 
 let billsTotal = document.getElementById("bills-total"); 
@@ -23,7 +23,7 @@ let entTotal = document.getElementById("ent-total");
 let clothingTotal = document.getElementById("clothing-total");
 
 // tbody
-let tableBody = document.querySelector("tbody")
+let tableBody = document.querySelector("tbody");
 
 //Class 
 class Expense {
@@ -43,10 +43,7 @@ function createExpense(item, category, amount) {
 
 function addToTable() {
   // Initially add 1 row and 3 columns
-  
   // Append td's to row
-  
-
   // Insert cells into the row
   // Append entry to table
   expenseArray.forEach((expense)=> {
@@ -101,62 +98,6 @@ function updateTotals() {
   remainingBalance.innerText = budgetInput.value - startCost;
 }
 
-// function addRow() {
-//   // Get input values
-//   let item = itemInput.value;
-//   let category = categoryInput.value;
-//   let cost = costInput.value;
-
-//   // Get table body
-//   let table = mainTable.getElementsByTagName("tbody")[0];
-
-//   // Create a new row
-//   let newRow = table.insertRow();
-
-//   // Insert cells into the row
-//   let itemCol = newRow.insertCell(0);
-//   let categoryCol = newRow.insertCell(1);
-//   let costCol = newRow.insertCell(2);
-
-//   // Add values to the cells
-//   itemCol.innerHTML = item;
-//   categoryCol.innerHTML = category;
-//   costCol.innerHTML = `$${cost}`;
-
-//   // //set class names to values 
-//   console.log(categoryCol);
-//   let createdCatCol = document.getElementsByTagName("tbody"); 
-//   createdCatCol[0].className = category;
-//   console.log(createdCatCol);
-//   // createdCatCol.classList.add(category);
-
-//   // Clear input fields after adding row
-//   itemInput.value = "";
-//   categoryInput.value = "";
-//   costInput.value = "";
-
-//   // Update remaining budget each time new item is entered
-//   let remainingBalance = document.getElementById("remaining-balance-num");
-
-//   container.style.display = "none";
-//   expenseForm.style.display = "none";
-//   budgetMain.style.display = "flex";
-
-//   let spanStartCost = document.getElementById("spanStartCost");
-//   let startCost = 0;
-
-//   // Total cost updates
-//   for (var i = 1; i < table.rows.length; i++) {
-//     // Get the cell value of the third column (index 2) and parse it as a float
-//     cost = parseFloat(table.rows[i].cells[2].textContent.replace("$", ""));
-
-//     // Add up total cost
-//     startCost += cost;
-//   }
-//   spanStartCost.innerText = `$${startCost}`;
-//   remainingBalance.innerText =budgetInput.value - startCost;
-// }
-
 btn.addEventListener("click", function (e) {
   e.preventDefault();
   //on button click "display: none"
@@ -193,9 +134,6 @@ addPurchaseBtn.addEventListener("click", (e) => {
   tableBody.innerHTML = "" 
   addToTable();
   updateTotals()
-
-   //update category breakdown 
-   categoryBreakdown(expenseArray);
   
   // clear inputs of form
   itemInput.value = "";
