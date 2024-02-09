@@ -47,15 +47,16 @@ function addToTable() {
   // Insert cells into the row
   // Append entry to table
   expenseArray.forEach((expense)=> {
-    let tableRow = document.createElement('tr')
-    let itemColumn = document.createElement('td')
-    let categoryColumn = document.createElement('td')
-    let amountColumn = document.createElement('td')
-    itemColumn.innerText = expense.item
-    categoryColumn.innerText = expense.category
-    amountColumn.innerText = expense.amount
-    tableRow.append(itemColumn, categoryColumn, amountColumn)
-    tableBody.append(tableRow)
+    let tableRow = document.createElement('tr');
+    let itemColumn = document.createElement('td');
+    let categoryColumn = document.createElement('td');
+    let amountColumn = document.createElement('td');
+    itemColumn.innerText = expense.item;
+    categoryColumn.innerText = expense.category;
+    amountColumn.innerText = expense.amount;
+    tableRow.classList.add(categoryColumn.innerText);
+    tableRow.append(itemColumn, categoryColumn, amountColumn);
+    tableBody.append(tableRow);
   }) 
 }
 
@@ -142,7 +143,8 @@ addPurchaseBtn.addEventListener("click", (e) => {
 
   //update category breakdown 
   categoryBreakdown(expenseArray);
-  //change display settings
+
+  //change display settings for cells 
   container.style.display = "none";
   expenseForm.style.display = "none";
   budgetMain.style.display = "flex";
