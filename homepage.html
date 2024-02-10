@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/mobile.css" />
     <title>Budget Buddy</title>
   </head>
@@ -29,25 +32,34 @@
           type="submit"
           class="btn"
           value="Enter Max Allocated Amount Here"
-        > GET STARTED
+        >
+          GET STARTED
         </button>
       </form>
       <div id="bottomText">
         Track Your Spending And Take Control of Your Finances
       </div>
     </div>
-  <!-- mobile main budget page -->
+    <!-- mobile main budget page -->
     <div class="budget-main">
       <!-- remaining balance header -->
       <div id="remaining-balance-container">
         <!-- <img class="dollar-image-main" src="styles/logo.svg"/> -->
-        <h1 id="remaining-balance-title">Remaining Balance </h1>
+        <h1 id="remaining-balance-title">Remaining Balance</h1>
         <!-- Where remaining balance will show up -->
-        <p id="remaining-balance-area">$ <span id="remaining-balance-num"></span></p>
+        <p id="remaining-balance-area">
+          $ <span id="remaining-balance-num"></span>
+        </p>
         <div id="submit-expense">
           <!-- button to submit a new expense -->
-          <button id="submit-expense-btn"> Add Expense</button>
+          <button id="submit-expense-btn">Add Expense</button>
         </div>
+      </div>
+      <!-- Progress Bar -->
+      <div id="progress-bar-container">
+        <label for="budget-progress">Budget Progress:</label>
+        <progress id="budget-progress" value="0" max="100"></progress>
+        <span id="progress-percentage">0%</span>
       </div>
       <!-- category breakdown section -->
       <div id="category-container">
@@ -57,13 +69,19 @@
             <div id="food-breakdown">Food: $<span id="food-total"></span></div>
           </div>
           <div class="category-box">
-            <div id="bills-breakdown">Bills: $<span id="bills-total"></span></div>
+            <div id="bills-breakdown">
+              Bills: $<span id="bills-total"></span>
+            </div>
           </div>
           <div class="category-box">
-            <div id="ent-breakdown">Entertainment: $<span id="ent-total"></span></div>
+            <div id="ent-breakdown">
+              Entertainment: $<span id="ent-total"></span>
+            </div>
           </div>
           <div class="category-box">
-            <div id="clothing-breakdown">Clothing: $<span id="clothing-total"></span></div>
+            <div id="clothing-breakdown">
+              Clothing: $<span id="clothing-total"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -71,46 +89,54 @@
       <div class="expense-table">
         <table id="mainTable">
           <thead>
-              <tr id="table-head">
-                  <th>Item</th>
-                  <th>Category</th>
-                  <th>Cost</th>
-              </tr>
+            <tr id="table-head">
+              <th>Item</th>
+              <th>Category</th>
+              <th>Cost</th>
+            </tr>
           </thead>
           <tbody>
-              <tr>
-                
-              </tr>
+            <tr></tr>
           </tbody>
         </table>
       </div>
       <div id="startCost">
-        <p>Total Spent: </p>
-        <span id="spanStartCost">  </span>
+        <p>Total Spent:</p>
+        <span id="spanStartCost"> </span>
       </div>
     </div>
     <!-- EXPENSE FORM -->
     <div id="expense-container">
       <form id="expense-form">
-        <img id="expense-logo" src="styles/logo.svg"/>
+        <img id="expense-logo" src="styles/logo.svg" />
         <div class="input-layouts">
           <label for="itemInput">Item </label>
-          <input type="text" id="itemInput" class="input-box" placeholder="Item">
+          <input
+            type="text"
+            id="itemInput"
+            class="input-box"
+            placeholder="Item"
+          />
         </div>
         <div class="input-layouts">
           <label for="categoryInput">Select Category </label>
           <select id="categoryInput" class="input-box" placeholder="Category">
-              <option value="Bills">Bills</option>
-              <option value="Clothing">Clothing</option>
-              <option value="Entertainment">Entertainment</option>
-              <option value="Food">Food</option>
+            <option value="Bills">Bills</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Food">Food</option>
           </select>
         </div>
         <div class="input-layouts">
           <label for="costInput">Cost </label>
-          <input type="number" id="costInput" class="input-box" placeholder="Cost">
+          <input
+            type="number"
+            id="costInput"
+            class="input-box"
+            placeholder="Cost"
+          />
         </div>
-        <button id="expense-add-btn" >Add Purchase</button>
+        <button id="expense-add-btn">Add Purchase</button>
       </form>
     </div>
     <!-- JS Script FILE  -->

@@ -5,7 +5,7 @@ const entranceForm = document.querySelector("entranceForm");
 const nameInput = document.getElementById("name");
 const budgetInput = document.getElementById("budget");
 const remainingBalance = document.getElementById("remaining-balance-num");
-const addExpense = document.getElementById("submit-expense-btn"); 
+const addExpense = document.getElementById("submit-expense-btn");
 const expenseForm = document.getElementById("expense-container");
 const addPurchaseBtn = document.getElementById("expense-add-btn");
 const spanStartCost = document.getElementById("spanStartCost");
@@ -16,29 +16,29 @@ let costInput = document.getElementById("costInput");
 //table
 const mainTable = document.getElementById("mainTable");
 let expenseArray = [];
-//category breakdown 
-let foodTotal = document.getElementById("food-total"); 
-let billsTotal = document.getElementById("bills-total"); 
-let entTotal = document.getElementById("ent-total"); 
+//category breakdown
+let foodTotal = document.getElementById("food-total");
+let billsTotal = document.getElementById("bills-total");
+let entTotal = document.getElementById("ent-total");
 let clothingTotal = document.getElementById("clothing-total");
 
 // tbody
 let tableBody = document.querySelector("tbody");
 
-//Class 
+//Class
 class Expense {
   constructor(item, category, amount) {
-    this.item = item; 
-    this.category = category; 
-    this.amount = amount; 
+    this.item = item;
+    this.category = category;
+    this.amount = amount;
   }
 }
 
-// FUNCTIONS 
+// FUNCTIONS
 function createExpense(item, category, amount) {
-  let newExpense = new Expense(item, category, amount); 
-  expenseArray.push(newExpense)
-  return newExpense; 
+  let newExpense = new Expense(item, category, amount);
+  expenseArray.push(newExpense);
+  return newExpense;
 }
 
 function addToTable() {
@@ -46,39 +46,43 @@ function addToTable() {
   // Append td's to row
   // Insert cells into the row
   // Append entry to table
-  expenseArray.forEach((expense)=> {
-    let tableRow = document.createElement('tr');
-    let itemColumn = document.createElement('td');
-    let categoryColumn = document.createElement('td');
-    let amountColumn = document.createElement('td');
+  expenseArray.forEach((expense) => {
+    let tableRow = document.createElement("tr");
+    let itemColumn = document.createElement("td");
+    let categoryColumn = document.createElement("td");
+    let amountColumn = document.createElement("td");
     itemColumn.innerText = expense.item;
     categoryColumn.innerText = expense.category;
     amountColumn.innerText = expense.amount;
     tableRow.classList.add(categoryColumn.innerText);
     tableRow.append(itemColumn, categoryColumn, amountColumn);
     tableBody.append(tableRow);
-  }) 
+  });
 }
 
-function categoryBreakdown(expenseArray){
-  let food = "Food"; 
-  let bills = "Bills"; 
-  let ent = "Entertainment"; 
-  let clothing = "Clothing"; 
-  let newCatTotal = 0; 
-  let addedObj = expenseArray.length-1;
+function categoryBreakdown(expenseArray) {
+  let food = "Food";
+  let bills = "Bills";
+  let ent = "Entertainment";
+  let clothing = "Clothing";
+  let newCatTotal = 0;
+  let addedObj = expenseArray.length - 1;
 
-  if(expenseArray[addedObj].category === food) {
-    newCatTotal = Number(expenseArray[addedObj].amount) + Number(foodTotal.innerText);
+  if (expenseArray[addedObj].category === food) {
+    newCatTotal =
+      Number(expenseArray[addedObj].amount) + Number(foodTotal.innerText);
     foodTotal.innerText = newCatTotal.toString();
-  }else if (expenseArray[addedObj].category === bills) {
-    newCatTotal = Number(expenseArray[addedObj].amount) + Number(billsTotal.innerText);
+  } else if (expenseArray[addedObj].category === bills) {
+    newCatTotal =
+      Number(expenseArray[addedObj].amount) + Number(billsTotal.innerText);
     billsTotal.innerText = newCatTotal.toString();
-  }else if (expenseArray[addedObj].category === ent) {
-    newCatTotal = Number(expenseArray[addedObj].amount) + Number(entTotal.innerText);
+  } else if (expenseArray[addedObj].category === ent) {
+    newCatTotal =
+      Number(expenseArray[addedObj].amount) + Number(entTotal.innerText);
     entTotal.innerText = newCatTotal.toString();
-  }else if (expenseArray[addedObj].category === clothing) {
-    newCatTotal = Number(expenseArray[addedObj].amount) + Number(clothingTotal.innerText);
+  } else if (expenseArray[addedObj].category === clothing) {
+    newCatTotal =
+      Number(expenseArray[addedObj].amount) + Number(clothingTotal.innerText);
     clothingTotal.innerText = newCatTotal.toString();
   }
 }
@@ -90,7 +94,7 @@ function updateTotals() {
   // Total cost updates
   for (let i = 0; i < expenseArray.length; i++) {
     // Get cost from array
-    cost = Number(expenseArray[i].amount)
+    cost = Number(expenseArray[i].amount);
 
     // Add up total cost
     startCost += cost;
@@ -101,65 +105,88 @@ function updateTotals() {
 
 btn.addEventListener("click", function (e) {
   e.preventDefault();
-  if (nameInput.value === '' || budgetInput.value === '') {
-    alert('Please fill in all fields');
+  if (nameInput.value === "" || budgetInput.value === "") {
+    alert("Please fill in all fields");
     return;
   }
   //on button click "display: none"
   container.style.display = "none";
   budgetMain.style.display = "flex";
-  
+
   // Name and budget goes into local storage
   localStorage.setItem("name", nameInput.value);
   localStorage.setItem("budget", budgetInput.value);
   remainingBalance.innerText = budgetInput.value;
-  console.dir(remainingBalance)
+  console.dir(remainingBalance);
 });
 
 //Add expense click will bring form to display
 addExpense.addEventListener("click", function (e) {
   e.preventDefault();
-  if (nameInput === '' || budgetInput === '') {
-    alert('Please fill in all fields');
+  if (nameInput === "" || budgetInput === "") {
+    alert("Please fill in all fields");
     return;
   }
   //on button click "display: none"
   container.style.display = "none";
   expenseForm.style.display = "flex";
   budgetMain.style.display = "none";
-})
+});
 
 //Add Purchase Button click will bring back to main page with updated table
 addPurchaseBtn.addEventListener("click", (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 
-  //get values of form inputs 
+  //get values of form inputs
   let item = itemInput.value;
   let category = categoryInput.value;
   let cost = costInput.value;
 
-  if (item === '' || category === '' || cost === '') {
-    alert('Please fill in all fields');
+  if (item === "" || category === "" || cost === "") {
+    alert("Please fill in all fields");
     return;
   }
 
-  //create new expense object 
+  //create new expense object
   createExpense(item, category, cost);
   //call function to create new item row
-  tableBody.innerHTML = "" 
+  tableBody.innerHTML = "";
   addToTable();
-  updateTotals()
-  
+  updateTotals();
+
   // clear inputs of form
   itemInput.value = "";
   categoryInput.value = "";
-  costInput.value = ""
+  costInput.value = "";
 
-  //update category breakdown 
+  //update category breakdown
   categoryBreakdown(expenseArray);
 
-  //change display settings for cells 
+  //change display settings for cells
   container.style.display = "none";
   expenseForm.style.display = "none";
   budgetMain.style.display = "flex";
-})
+});
+
+function updateProgressBar() {
+  let totalExpenses = expenseArray.reduce(
+    (total, expense) => total + expense.amount,
+    0
+  );
+  // Get the total budget value from the input
+  let totalBudget = Number(budgetInput.value);
+
+  // Calculate the progress percentage. If totalBudget is zero, set percentage to 0 to avoid division by zero
+  let progressPercentage =
+    totalBudget > 0 ? (totalExpenses / totalBudget) * 100 : 0;
+
+  let progressBar = document.getElementById("budget-progress");
+  let progressText = document.getElementById("progress-percentage");
+
+  progressBar.value = progressPercentage;
+  progressText.innerText = `${progressPercentage.toFixed(2)}%`; // Display the percentage, rounded to two decimal places
+
+  if (progressPercentage >= 100) {
+    progressBar.style.backgroundColor = "red"; // Example to change color, adapt as needed
+  }
+}
