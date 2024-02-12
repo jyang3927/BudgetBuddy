@@ -262,7 +262,8 @@ td{
   padding: 7px;
   color: #fbf7ef;
   border: 1px solid #f2e8cf;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .Clothing {
@@ -275,7 +276,7 @@ td{
   background-color: #75B9BE;
 }
 .Bills {
-  background-color: #6a994e;
+  background-color: #9BC53D;
 }
 /* Total Spent */
 #startCost {
@@ -327,6 +328,7 @@ td{
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 #expense-form {
   display: flex; 
@@ -371,6 +373,94 @@ td{
 
 #expense-logo {
   height: 150px;
+}
+
+
+/* PROGRESS BAR */
+#progress-bar-container {
+  border: 3px solid #115711;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2e8cf;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+#progress-bar-title {
+  font-weight: 500; 
+  color: #115711; 
+  font-size: 25px;
+  margin: 5px;
+}
+#budget-progress {
+  width: 95%;
+  height: 50px; 
+  border: 1px solid #386641; 
+  background-color: #FBF7EF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex; 
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#food-percentage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #386641;
+  margin: none;
+  width: 0;
+  height: 100%;
+  background-color: #75B9BE;
+  color: #fbf7ef; 
+  font-size: 18px;
+  font-weight:400;
+}
+#bills-percentage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #386641;
+  width: 10%;
+  height: 100%;
+  margin: none;
+  background-color: #9BC53D;
+  color: #fbf7ef; 
+  font-size: 18px;
+  font-weight:400;
+}
+#ent-percentage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #386641;
+  font-size: 18px;
+  width: 0; 
+  height: 100%;
+  margin:none;
+  background-color: #DA627D;
+  color: #fbf7ef; 
+  font-weight:400;
+}
+#clothing-percentage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #386641;
+  font-size: 18px;
+  width: 0;
+  height: 100%;
+  margin:none;
+  background-color: #F4A261;
+  color: #fbf7ef; 
+  font-weight:400;
 }
 
 
