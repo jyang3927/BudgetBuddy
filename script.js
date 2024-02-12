@@ -21,9 +21,13 @@ let foodTotal = document.getElementById("food-total");
 let billsTotal = document.getElementById("bills-total"); 
 let entTotal = document.getElementById("ent-total"); 
 let clothingTotal = document.getElementById("clothing-total");
-
 // tbody
 let tableBody = document.querySelector("tbody");
+//progressbar
+let foodBar = document.getElementById("food-percentage");
+let billsBar = document.getElementById("bills-percentage");
+let entBar = document.getElementById("ent-percentage");
+let clothingBar = document.getElementById("clothing-percentage");
 
 //Class 
 class Expense {
@@ -99,6 +103,58 @@ function updateTotals() {
   remainingBalance.innerText = budgetInput.value - startCost;
 }
 
+// Progress bar
+function updateProgressBar() {
+  //DOM progress elements 
+  let displayWidth = 0;
+  let foodTotalVal = Number(foodTotal.innerText);
+  let billsTotalVal = Number(billsTotal.innerText); 
+  let entTotalVal = Number(entTotal.innerText); 
+  let clothingTotalVal = Number(clothingTotal.innerText)
+  //calculate percentages of categories 
+  let foodPercentage = getCategoryPercentage(foodTotalVal); 
+  if (foodPercentage != false) {
+    foodBar.style.display = "flex";
+    displayWidth = foodPercentage * 100;
+    foodBar.style.width = displayWidth + "%";
+    foodBar.innerText = displayWidth + "%";
+  }
+  let billsPercentage = getCategoryPercentage(billsTotalVal); 
+  if (billsPercentage!= false) {
+    billsBar.style.display = "flex";
+    displayWidth = billsPercentage * 100;
+    billsBar.style.width = displayWidth + "%";
+    billsBar.innerText = displayWidth + "%"; 
+  }
+  let entPercentage = getCategoryPercentage(entTotalVal);
+  if (entPercentage!= false) {
+    entBar.style.display = "flex";
+    displayWidth = entPercentage * 100;
+    entBar.style.width = displayWidth + "%";
+    entBar.innerText = displayWidth + "%";
+  } 
+  let clothingPercentage = getCategoryPercentage(clothingTotalVal); 
+  if (clothingPercentage!= false) {
+    clothingBar.style.display = "flex";
+    displayWidth = clothingPercentage * 100;
+    clothingBar.style.width = displayWidth + "%";
+    clothingBar.innerText = displayWidth + "%";
+  }
+}
+
+//calculate percentage of category for progress bar
+function getCategoryPercentage(category) {
+  let totalBudget = Number(budgetInput.value);
+  let categoryPercentage = category/totalBudget;
+  if (categoryPercentage > 0) {
+    console.log(Math.round(categoryPercentage));
+    return categoryPercentage.toFixed(2); 
+  }else {
+    return false;
+  }
+}
+
+// Event listeners
 btn.addEventListener("click", function (e) {
   e.preventDefault();
   if (nameInput.value === '' || budgetInput.value === '') {
@@ -157,6 +213,8 @@ addPurchaseBtn.addEventListener("click", (e) => {
 
   //update category breakdown 
   categoryBreakdown(expenseArray);
+
+  updateProgressBar();
 
   //change display settings for cells 
   container.style.display = "none";
