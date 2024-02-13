@@ -177,16 +177,20 @@ function changeBackgroundColor() {
     entBar.style.backgroundColor = "#fabc3c";
     billsBar.style.backgroundColor = "#fabc3c";
     clothingBar.style.backgroundColor = "#fabc3c";
+    addPurchaseBtn.style.backgroundColor = "#fabc3c";
+    btn.style.backgroundColor = "#fabc3c";
   }
 
   if (Number(remainingBalance.innerText) <= tenPercent) {
     budgetMain.style.backgroundColor = "#c9182c";
     body.style.backgroundColor = "#c9182c";
     // progressUpdate.style.backgroundColor = "#FF0000";
-    foodBar.style.backgroundColor = "#FF0000";
-    entBar.style.backgroundColor = "#FF0000";
-    billsBar.style.backgroundColor = "#FF0000";
-    clothingBar.style.backgroundColor = "#FF0000";
+    foodBar.style.backgroundColor = "#c9182c";
+    entBar.style.backgroundColor = "#c9182c";
+    billsBar.style.backgroundColor = "#c9182c";
+    clothingBar.style.backgroundColor = "#c9182c";
+    addPurchaseBtn.style.backgroundColor = "#c9182c";
+    btn.style.backgroundColor = "#c9182c";
   }
 }
 
