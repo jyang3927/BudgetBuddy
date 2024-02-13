@@ -90,13 +90,13 @@ h2 {
 
 /* MAIN BUDGET MOBILE STYLES */
 body {
-  margin: 0; 
+  margin: 0;
   height: 100vh;
   background-color: #6a994e;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
-.budget-main{
+.budget-main {
   display: none;
   flex-direction: column;
   height: 100vh;
@@ -109,7 +109,7 @@ body {
 /* remaining balance section */
 
 #remaining-balance-container {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
   border: 3px solid #386641;
@@ -123,12 +123,12 @@ body {
 #remaining-balance-title {
   font-size: 50px;
   margin: 30px 50px 10px 50px;
-  color: #0A680A;
+  color: #0a680a;
 }
 #remaining-balance-area {
   border: 3px solid #386641;
   height: 75px;
-  background-color: #FBF7EF;
+  background-color: #fbf7ef;
   border-radius: 10px;
   display: flex;
   justify-content: flex-start;
@@ -151,17 +151,16 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
 #submit-expense-btn {
   width: 70%;
-  border-radius: 7px; 
+  border-radius: 7px;
   border: 3px solid #115711;
   height: 50px;
   font-size: 25px;
   background-color: #386641;
   color: #fbf7ef;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
@@ -209,19 +208,19 @@ body {
   flex-wrap: wrap;
 }
 #food-breakdown {
-  background-color: #75B9BE;
+  background-color: #75b9be;
   padding: 10px;
 }
 #bills-breakdown {
-  background-color: #9BC53D;
+  background-color: #9bc53d;
   padding: 10px;
 }
 #ent-breakdown {
-  background-color: #DA627D;
+  background-color: #da627d;
   padding: 10px;
 }
 #clothing-breakdown {
-  background-color: #F4A261;
+  background-color: #f4a261;
   padding: 10px;
 }
 
@@ -247,7 +246,7 @@ thead {
 }
 #table-head {
   background-color: #386641;
-  color: #fbf7ef
+  color: #fbf7ef;
 }
 
 th {
@@ -258,7 +257,7 @@ th {
   border: 1px solid #f2e8cf;
 }
 
-td{
+td {
   padding: 7px;
   color: #fbf7ef;
   border: 1px solid #f2e8cf;
@@ -267,16 +266,16 @@ td{
 }
 
 .Clothing {
-  background-color: #F4A261;
+  background-color: #f4a261;
 }
 .Entertainment {
-  background-color: #DA627D;
+  background-color: #da627d;
 }
 .Food {
-  background-color: #75B9BE;
+  background-color: #75b9be;
 }
 .Bills {
-  background-color: #9BC53D;
+  background-color: #9bc53d;
 }
 /* Total Spent */
 #startCost {
@@ -331,15 +330,15 @@ td{
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 #expense-form {
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 .input-layouts {
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 .input-layouts > label {
-  color: #6a994e; 
+  color: #6a994e;
   font-size: 30px;
   font-weight: 600;
   width: 100%;
@@ -350,10 +349,10 @@ td{
   font-family: "Rubik", sans-serif;
   height: 50px;
   width: 50%;
-  border: 2px solid #386641; 
+  border: 2px solid #386641;
   border-radius: 10px;
   background-color: #386641;
-  color: #fbf7ef; 
+  color: #fbf7ef;
   font-weight: 500;
   font-size: 20px;
   margin-top: 30px;
@@ -364,9 +363,9 @@ td{
   height: 40px;
   width: 100%;
   border-radius: 5px;
-  border: 2px solid #386641; 
+  border: 2px solid #386641;
   color: gray;
-  padding:0px;
+  padding: 0px;
   text-align: center;
   font-size: 20px;
 }
@@ -374,7 +373,6 @@ td{
 #expense-logo {
   height: 150px;
 }
-
 
 /* PROGRESS BAR */
 #progress-bar-container {
@@ -393,19 +391,19 @@ td{
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 #progress-bar-title {
-  font-weight: 500; 
-  color: #115711; 
+  font-weight: 500;
+  color: #115711;
   font-size: 25px;
   margin: 5px;
 }
 #budget-progress {
   width: 95%;
-  height: 50px; 
-  border: 1px solid #386641; 
-  background-color: #FBF7EF;
+  height: 50px;
+  border: 2px solid #386641;
+  background-color: #fbf7ef;
   margin-top: 10px;
   margin-bottom: 10px;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: flex-start;
 }
@@ -414,56 +412,54 @@ td{
   display: none;
   justify-content: center;
   align-items: center;
-  border: 1px solid #386641;
+  border: 2px solid #386641;
   margin: none;
   width: 0;
   height: 100%;
-  background-color: #75B9BE;
-  color: #fbf7ef; 
+  background-color: #75b9be;
+  color: #fbf7ef;
   font-size: 18px;
-  font-weight:400;
+  font-weight: 400;
 }
 #bills-percentage {
   display: none;
   justify-content: center;
   align-items: center;
-  border: 1px solid #386641;
+  border: 2px solid #386641;
   width: 10%;
   height: 100%;
   margin: none;
-  background-color: #9BC53D;
-  color: #fbf7ef; 
+  background-color: #9bc53d;
+  color: #fbf7ef;
   font-size: 18px;
-  font-weight:400;
+  font-weight: 400;
 }
 #ent-percentage {
   display: none;
   justify-content: center;
   align-items: center;
-  border: 1px solid #386641;
+  border: 2px solid #386641;
   font-size: 18px;
-  width: 0; 
+  width: 0;
   height: 100%;
-  margin:none;
-  background-color: #DA627D;
-  color: #fbf7ef; 
-  font-weight:400;
+  margin: none;
+  background-color: #da627d;
+  color: #fbf7ef;
+  font-weight: 400;
 }
 #clothing-percentage {
   display: none;
   justify-content: center;
   align-items: center;
-  border: 1px solid #386641;
+  border: 2px solid #386641;
   font-size: 18px;
   width: 0;
   height: 100%;
-  margin:none;
-  background-color: #F4A261;
-  color: #fbf7ef; 
-  font-weight:400;
+  margin: none;
+  background-color: #f4a261;
+  color: #fbf7ef;
+  font-weight: 400;
 }
-
-
 
 /* MEDIA QUERY */
 
