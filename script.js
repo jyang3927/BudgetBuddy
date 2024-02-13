@@ -29,6 +29,10 @@ let billsBar = document.getElementById("bills-percentage");
 let entBar = document.getElementById("ent-percentage");
 let clothingBar = document.getElementById("clothing-percentage");
 
+// Background change
+let twentyFivePercent = budgetInput.value * .25
+let tenPercent = budgetInput.value * .1
+
 //Class 
 class Expense {
   constructor(item, category, amount) {
@@ -154,6 +158,19 @@ function getCategoryPercentage(category) {
   }
 }
 
+function changeBackgroundColor() {
+  if (remainingBalance.innerText <= twentyFivePercent && 
+    remainingBalance.innerText > tenPercent){    
+    budgetMain.style.backgroundColor = "yellow"
+    // body.style.backgroundColor = "yellow"
+}
+
+  if (remainingBalance.innerText < tenPercent) {
+    budgetMain.style.backgroundColor = "red"
+  // body.style.backgroundColor = "red"
+}
+}
+
 // Event listeners
 btn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -205,6 +222,7 @@ addPurchaseBtn.addEventListener("click", (e) => {
   tableBody.innerHTML = "" 
   addToTable();
   updateTotals()
+  changeBackgroundColor()
   
   // clear inputs of form
   itemInput.value = "";
@@ -215,6 +233,7 @@ addPurchaseBtn.addEventListener("click", (e) => {
   categoryBreakdown(expenseArray);
 
   updateProgressBar();
+
 
   //change display settings for cells 
   container.style.display = "none";
