@@ -1,6 +1,7 @@
 const btn = document.querySelector(".btn");
 const container = document.querySelector(".container");
 const budgetMain = document.querySelector(".budget-main");
+const body = document.querySelector("body");
 const entranceForm = document.querySelector("entranceForm");
 const nameInput = document.getElementById("name");
 const budgetInput = document.getElementById("budget");
@@ -28,10 +29,6 @@ let foodBar = document.getElementById("food-percentage");
 let billsBar = document.getElementById("bills-percentage");
 let entBar = document.getElementById("ent-percentage");
 let clothingBar = document.getElementById("clothing-percentage");
-
-// Background change
-let twentyFivePercent = budgetInput.value * .25
-let tenPercent = budgetInput.value * .1
 
 //Class 
 class Expense {
@@ -159,16 +156,21 @@ function getCategoryPercentage(category) {
 }
 
 function changeBackgroundColor() {
-  if (remainingBalance.innerText <= twentyFivePercent && 
-    remainingBalance.innerText > tenPercent){    
-    budgetMain.style.backgroundColor = "yellow"
-    // body.style.backgroundColor = "yellow"
-}
+  // Percents
+  let twentyFivePercent = budgetInput.value * .25
+  console.log(twentyFivePercent)
+  let tenPercent = budgetInput.value * .1
+  console.log(tenPercent)
+  if (Number(remainingBalance.innerText) <= twentyFivePercent && 
+    Number(remainingBalance.innerText) > tenPercent){    
+    budgetMain.style.backgroundColor = "#fabc3c"
+    body.style.backgroundColor = "#fabc3c"
+    }
 
-  if (remainingBalance.innerText < tenPercent) {
-    budgetMain.style.backgroundColor = "red"
-  // body.style.backgroundColor = "red"
-}
+  if (Number(remainingBalance.innerText) < tenPercent) {
+    budgetMain.style.backgroundColor = "#c9182c"
+    body.style.backgroundColor = "#c9182c"
+  }
 }
 
 // Event listeners
@@ -222,7 +224,6 @@ addPurchaseBtn.addEventListener("click", (e) => {
   tableBody.innerHTML = "" 
   addToTable();
   updateTotals()
-  changeBackgroundColor()
   
   // clear inputs of form
   itemInput.value = "";
@@ -233,7 +234,7 @@ addPurchaseBtn.addEventListener("click", (e) => {
   categoryBreakdown(expenseArray);
 
   updateProgressBar();
-
+  changeBackgroundColor()
 
   //change display settings for cells 
   container.style.display = "none";
