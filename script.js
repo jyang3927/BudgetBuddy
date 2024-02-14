@@ -229,6 +229,11 @@ addPurchaseBtn.addEventListener("click", (e) => {
     return;
   }
 
+  if (cost < 0) {
+    alert("Cost can't be negative. Please resubmit.")
+    return;
+  }
+
   //create new expense object
   createExpense(item, category, cost);
   //call function to create new item row
